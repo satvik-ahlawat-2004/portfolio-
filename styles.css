@@ -68,7 +68,7 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
-    color: var(--text-primary);
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.6;
     position: relative;
     overflow-x: hidden;
@@ -510,15 +510,14 @@ section {
 }
 
 .project-card {
-    background: rgba(31, 28, 44, 0.6);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-lg);
-    border: 1px solid var(--glass-border);
     padding: 2.5rem;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 .project-card:hover {
@@ -572,12 +571,12 @@ section {
 }
 
 .skill-category h3 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: var(--accent-primary);
     position: relative;
 }
 
@@ -601,7 +600,7 @@ section {
     margin-bottom: 1rem;
     padding: 0.75rem 1rem;
     position: relative;
-    background: rgba(31, 28, 44, 0.3);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: var(--border-radius);
     border: 1px solid var(--glass-border);
     transition: all 0.3s ease;
@@ -612,7 +611,7 @@ section {
 
 .skill-category li:hover {
     transform: translateX(10px);
-    background: rgba(31, 28, 44, 0.5);
+    background: rgba(255, 255, 255, 0.08);
     border-color: var(--accent-primary);
 }
 
@@ -634,7 +633,10 @@ section {
 }
 
 .skill-item-simple {
-    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
 }
 
 .skill-item-simple .skill-name {
@@ -647,22 +649,20 @@ section {
 }
 
 .skill-badge {
-    font-size: 0.85rem;
-    padding: 0.25rem 0.75rem;
+    padding: 0.2rem 0.6rem;
     border-radius: 12px;
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
 .skill-badge.advanced {
-    background: rgba(0, 240, 255, 0.1);
-    color: var(--accent-primary);
-    border: 1px solid rgba(0, 240, 255, 0.2);
+    background: var(--accent-primary);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .skill-badge.intermediate {
-    background: rgba(155, 93, 229, 0.1);
-    color: var(--accent-secondary);
-    border: 1px solid rgba(155, 93, 229, 0.2);
+    background: var(--accent-secondary);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 /* Experience */
@@ -692,6 +692,11 @@ section {
     position: relative;
     padding-left: 3rem;
     transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .experience-item::before {
@@ -725,7 +730,7 @@ section {
 
 .experience-role {
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 1rem;
     font-style: italic;
 }
@@ -739,14 +744,14 @@ section {
 .experience-details li {
     margin-bottom: 1rem;
     padding: 1rem;
-    background: rgba(31, 28, 44, 0.3);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: var(--border-radius);
     border: 1px solid var(--glass-border);
     transition: all 0.3s ease;
 }
 
 .experience-details li:hover {
-    background: rgba(31, 28, 44, 0.5);
+    background: rgba(255, 255, 255, 0.08);
     transform: translateX(10px);
     border-color: var(--accent-primary);
 }
@@ -1533,51 +1538,30 @@ section {
 /* Hero Title and Description */
 .hero-title {
     font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(
-        135deg,
-        var(--accent-primary) 0%,
-        var(--accent-secondary) 50%,
-        var(--accent-highlight) 100%
-    );
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
-    animation: titleGlow 3s ease-in-out infinite;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .hero-subtitle {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    background: linear-gradient(
-        135deg,
-        #FFB84C 0%,
-        #FF6B6B 50%,
-        #9B5DE5 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     line-height: 1.8;
-    color: var(--text-secondary);
     max-width: 800px;
-    margin: 0 auto;
-    position: relative;
+    margin: 1.5rem auto;
     padding: 1.5rem;
-    background: rgba(31, 28, 44, 0.3);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    animation: fadeIn 1s ease-out;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
 }
 
 .hero-description::before {
@@ -1599,26 +1583,6 @@ section {
 
 .hero-description:hover::before {
     opacity: 0.5;
-}
-
-@keyframes titleGlow {
-    0%, 100% {
-        text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
-    }
-    50% {
-        text-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Highlight Words */
@@ -1656,13 +1620,12 @@ section {
 
 /* Project Cards */
 .project-card h3 {
-    font-size: 2rem;
-    margin: 1.5rem 0;
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
-    position: relative;
-    padding-left: 1rem;
-    border-left: 4px solid var(--accent-primary);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .project-card p {
@@ -1681,16 +1644,12 @@ section {
 
 /* Skills Section */
 .skill-category h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(
-        135deg,
-        var(--accent-primary) 0%,
-        var(--accent-highlight) 100%
-    );
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: var(--accent-primary);
 }
 
 .skill-category li {
@@ -1719,7 +1678,7 @@ section {
 
 .experience-date {
     font-size: 1.2rem;
-    color: var(--accent-highlight);
+    color: var(--accent-primary);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -1808,10 +1767,11 @@ section {
 
 /* Text Highlights */
 .text-gradient {
-    background: var(--gradient-accent);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    font-weight: 600;
 }
 
 .text-glow {
@@ -1819,26 +1779,8 @@ section {
 }
 
 .text-highlight {
-    position: relative;
-    display: inline-block;
-}
-
-.text-highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--gradient-accent);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.text-highlight:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    color: var(--accent-primary);
+    font-weight: 600;
 }
 
 /* Animated Text Underline */
@@ -1877,7 +1819,7 @@ section {
 }
 
 .skill-item {
-    background: rgba(31, 28, 44, 0.4);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: var(--border-radius);
     padding: 1.25rem;
     border: 1px solid var(--glass-border);
@@ -1886,7 +1828,7 @@ section {
 
 .skill-item:hover {
     transform: translateX(10px);
-    background: rgba(31, 28, 44, 0.6);
+    background: rgba(255, 255, 255, 0.08);
     border-color: var(--accent-primary);
 }
 
@@ -1966,27 +1908,26 @@ section {
 }
 
 .tag {
-    padding: 0.375rem 1rem;
-    border-radius: 12px;
-    font-size: 0.875rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
     font-weight: 500;
-    background: rgba(155, 93, 229, 0.1);
-    color: var(--accent-secondary);
-    border: 1px solid rgba(155, 93, 229, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
 }
 
 .tag:hover {
-    background: rgba(155, 93, 229, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(155, 93, 229, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 /* Project Description */
 .project-description {
     margin: 1.5rem 0;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
 }
 
