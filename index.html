@@ -3,12 +3,15 @@
 <html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Satvik Ahlawat - Data Analyst & Business Strategist</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 <body>
     <!-- Loading Animation -->
@@ -29,6 +32,11 @@
     
     <!-- Navigation -->
     <nav class="navbar glass-effect">
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <div class="nav-links">
             <a href="#home" class="active">
                 <i class="fas fa-home"></i>
@@ -55,11 +63,6 @@
                 <span>Contact</span>
             </a>
         </div>
-        <button class="mobile-menu-btn" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
     <!-- Hero Section -->
@@ -78,6 +81,12 @@
                 <span class="highlight-cta">Excel automation</span>, and 
                 <span class="highlight-primary">financial insights</span>. 
                 Passionate about converting raw data into business value.
+            </div>
+            <div class="hero-cta">
+                <a href="Satvik_ahlawat_resume.pdf (1) copy.pdf" download class="btn primary-btn">
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                </a>
             </div>
         </div>
     </section>
@@ -430,8 +439,11 @@
                         <div class="validation-message"></div>
                     </div>
                     
-                    <button type="submit" class="submit-btn">
-                        <span>Send Message</span>
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-spinner" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
@@ -602,6 +614,12 @@
             duration: 800,
             once: true
         });
+    </script>
+    <script>
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+        })();
     </script>
     <script src="script.js"></script>
 </body>
